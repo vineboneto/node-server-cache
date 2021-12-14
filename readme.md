@@ -8,6 +8,7 @@ Studying backend, populating any table with 1,000,000,000 of data
 
 - Postgres >= 13.x
 - NodeJS >= 14.x
+- Redis [Windows Installation](https://github.com/microsoftarchive/redis/releases)
 
 ## Installation
 
@@ -35,3 +36,4 @@ $ yarn start
 ## Annotations
 
 - 142.585ms without redis
+- 5.75ms with redis
