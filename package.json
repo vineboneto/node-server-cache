@@ -6,6 +6,7 @@
     "start": "node dist/server.js",
     "build:watch": "rimraf dist && tsc -w",
     "dev": "ts-node-dev --watch src --respawn  --transpile-only  src/server.ts",
+    "dev:queue": " ts-node-dev --watch src --respawn  --transpile-only  src/queue.ts",
     "build": "rimraf dist && tsc",
     "gen": "prisma generate",
     "pull": "prisma db pull",

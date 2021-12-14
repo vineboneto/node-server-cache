@@ -2,9 +2,9 @@ import 'dotenv/config'
 import express, { json, Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
 import faker from 'faker'
-
-import mail from './mailer'
 import { getRedis, setRedis } from './redis-config'
+import { MailQueue } from './mail-queue'
+import { SendMail } from './jobs'
 
 const client = new PrismaClient()
 const app = express()
@@ -39,16 +39,11 @@ app.post('/users', async (request: Request, response: Response) => {
     const data = await client.user.create({
       data: {
         email,
-        username: faker.name.findName(),
         password: faker.internet.password(),
+        username: faker.name.findName(),
       },
     })
-    mail.sendMail({
-      to: email,
-      subject: 'Testing Email',
-      from: 'Queue Teste',
-      html: '<p>Hello World</p>',
-    })
+    await MailQueue.add({ email })
     return data ? response.status(200).json(data) : response.status(204)
   } catch (err: any) {
     return response.status(500).json({ error: err.message })
