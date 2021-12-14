@@ -20,4 +20,18 @@ $ yarn gen
 
 # Generate seeds
 $ yarn seed
+
+# Start server development mode
+$ yarn build:watch
+
+$ yarn dev
+
+# Start server production mode
+$ yarn build
+
+$ yarn start
 ```
+
+## Annotations
+
+- 142.585ms without redis
