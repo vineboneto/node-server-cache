@@ -1,0 +1,26 @@
+{
+  "name": "node-server-cache",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "gen": "prisma generate",
+    "pull": "prisma db pull",
+    "seed": "prisma db seed"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.6.0",
+    "prisma": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/faker": "^5.5.9",
+    "@types/node": "^16.11.12",
+    "faker": "^5.5.3",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
