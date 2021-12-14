@@ -16,8 +16,8 @@ Studying backend, populating any table with 1,000,000,000 of data
 # Install dependencies
 $ yarn
 
-# Generate cliente prisma
-$ yarn gen
+# Upgrade your db
+$ yarn push
 
 # Generate seeds
 $ yarn seed
